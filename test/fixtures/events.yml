@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  startsAt: 2016-10-24
+  endsAt: 2016-10-24
+  client_id: 1
+  plumber_id: 1
+
+two:
+  title: MyString
+  startsAt: 2016-10-24
+  endsAt: 2016-10-24
+  client_id: 1
+  plumber_id: 1
