@@ -73,3 +73,35 @@ Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 11.4ms)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dave@dave.com"], ["username", "dave"], ["password_digest", "$2a$10$wDhJldwjdtQHittnqoLYwOtVq42M1YZNT3y06D2/2rDu/Y6EaFfBi"], ["created_at", 2016-10-24 13:54:48 UTC], ["updated_at", 2016-10-24 13:54:48 UTC]]
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/register" for 127.0.0.1 at 2016-10-24 14:59:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"kenny", "first_name"=>"kenny", "last_name"=>"kenny", "email"=>"kenny@ga.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"username"=>"kenny", "first_name"=>"kenny", "last_name"=>"kenny", "email"=>"kenny@ga.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0.1/classes/ActionController/Parameters.html (called from merge! at /Users/ryanmodeste/development/wdi-project-4/api/app/controllers/authentications_controller.rb:17)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "kenny"], ["last_name", "kenny"], ["email", "kenny@ga.co"], ["username", "kenny"], ["password_digest", "$2a$10$i5fYp2IbbcyGeLKuVdnRculGyls5RQJtizdQZDBBKqhiVV9jSdEOS"], ["created_at", 2016-10-24 13:59:01 UTC], ["updated_at", 2016-10-24 13:59:01 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 173ms (Views: 46.6ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2016-10-24 14:59:46 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"kenny@ga.co", "password"=>"[FILTERED]", "authentication"=>{"email"=>"kenny@ga.co", "password"=>"[FILTERED]"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2016-10-24 14:59:47 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"kenny@ga.co", "password"=>"[FILTERED]", "authentication"=>{"email"=>"kenny@ga.co", "password"=>"[FILTERED]"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2016-10-24 15:00:05 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"kenny@ga.co", "password"=>"[FILTERED]", "authentication"=>{"email"=>"kenny@ga.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kenny@ga.co"], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 166ms (Views: 2.0ms | ActiveRecord: 8.3ms)
+
+
