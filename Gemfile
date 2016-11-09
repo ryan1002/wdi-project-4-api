@@ -10,6 +10,9 @@ gem 'rack-cors'
 gem 'jwt'
 gem "figaro"
 
+# gem 'jsonapi-parser', '~> 0.1.1.beta2'
+# gem 'jsonapi', '~> 0.1.1.beta5'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
